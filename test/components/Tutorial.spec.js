@@ -9,7 +9,7 @@ describe('Tutorial', () => {
     expect(wrapper.vm).toBeTruthy()
   })
 
-  test('<action-menu /> passes accessibility tests', async () => {
+  test('<tutorial /> passes accessibility tests', async () => {
     const wrapper = mount(Tutorial)
     expect(await axe(wrapper.html())).toHaveNoViolations()
   })
