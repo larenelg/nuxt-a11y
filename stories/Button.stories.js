@@ -9,7 +9,7 @@ export default {
   },
 };
 
-const Template = (args, { argTypes }) => ({
+const Template = ({ argTypes }) => ({
   props: Object.keys(argTypes),
   components: { MyButton },
   template: '<my-button @onClick="onClick" v-bind="$props" />',
