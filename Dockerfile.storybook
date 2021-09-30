@@ -1,0 +1,19 @@
+FROM node:16 AS builder
+RUN mkdir -p /app/node_modules && chown -R node:node /app
+WORKDIR /app
+COPY package*.json ./
+USER node
+RUN npm ci
+COPY --chown=node:node . .
+RUN npm run build-storybook
+
+# nginx state for serving content
+FROM nginx:alpine
+# Set working directory to nginx asset directory
+WORKDIR /usr/share/nginx/html
+# Remove default nginx static assets
+RUN rm -rf ./*
+# Copy static assets over
+COPY --from=builder /app/storybook-static ./
+# Containers run nginx with global directives and daemon off
+ENTRYPOINT ["nginx", "-g", "daemon off;"]

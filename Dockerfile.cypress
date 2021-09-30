@@ -1,0 +1,16 @@
+# 14 is the node version
+FROM cypress/browsers:node14.17.0-chrome91-ff89
+
+# Copy NPM & Install
+COPY ./cypress/package.json /tmp/package.json
+RUN cd /tmp && CI=true npm install --ignore-scripts
+RUN CI=true /tmp/node_modules/.bin/cypress install
+RUN mkdir -p /e2e && cp -a /tmp/node_modules /e2e/
+
+WORKDIR /e2e
+# Copy files for config
+COPY ./cypress.json /e2e/cypress.json
+COPY ./cypress /e2e/cypress
+
+# Run tests
+CMD ["npx", "cypress", "run" ]
