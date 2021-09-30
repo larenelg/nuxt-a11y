@@ -1,5 +1,4 @@
-// Define at the top of the spec file or just import it
-function terminalLog(violations) {
+const terminalLog = (violations) => {
   cy.task(
     'log',
     `${violations.length} accessibility violation${violations.length === 1 ? '' : 's'
@@ -18,4 +17,12 @@ function terminalLog(violations) {
   cy.task('table', violationData)
 }
 
-module.exports = terminalLog
+const componentA11yCheckRules = {
+  rules: {
+    'landmark-one-main': { enabled: false },
+    'page-has-heading-one': { enabled: false },
+    'region': { enabled: false }
+  }
+}
+
+module.exports = { componentA11yCheckRules, terminalLog }
