@@ -1,5 +1,5 @@
 # 14 is the node version
-FROM cypress/base:14
+FROM cypress/browsers:node14.17.0-chrome91-ff89
 
 # Copy NPM & Install
 COPY ./cypress/package.json /tmp/package.json

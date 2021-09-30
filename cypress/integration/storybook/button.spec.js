@@ -1,9 +1,6 @@
 import { componentA11yCheckRules, terminalLog } from "../../support/cypress-axe-helpers";
 import getStorybookComponentUrl from "../../support/storybook-helpers"
 
-// ignore these rules when testing isolated components
-
-
 describe('Button', () => {
   beforeEach(() => {
     cy.visit(getStorybookComponentUrl('Example/Button', 'Primary'))
