@@ -29,7 +29,7 @@
     "@storybook/addon-a11y": "^6.3.8",
     "@storybook/addon-actions": "^6.3.8",
     "@storybook/addon-essentials": "^6.3.8",
-    "@storybook/addon-links": "^6.3.8",
+    "@storybook/addon-links": "^6.3.9",
     "@storybook/vue": "^6.3.8",
     "@vue/test-utils": "^1.2.1",
     "axe-core": "^4.3.3",
