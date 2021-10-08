@@ -1,4 +1,4 @@
-name: ci
+name: e2e
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  ci:
+  e2e:
     runs-on: ${{ matrix.os }}
 
     strategy:
@@ -38,8 +38,17 @@ jobs:
       - name: Install dependencies 👨🏻‍💻
         run: npm ci --prefer-offline --no-audit
 
-      - name: Run linter 👀
-        run: npm run lint
+      - name: Create screenshot folder
+        run: mkdir -p cypress/screenshots
 
-      - name: Run tests 🧪
-        run: npm run test
+      - name: Create video folder
+        run: mkdir -p cypress/videos
+
+      - name: Run e2e 🖥
+        run: docker-compose up --exit-code-from cypress
+
+      - name: Upload screenshots and videos
+        uses: actions/upload-artifact@v2
+        with:
+          name: e2e-artifacts
+          path: cypress/videos

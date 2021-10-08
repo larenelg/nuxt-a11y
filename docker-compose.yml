@@ -12,3 +12,12 @@ services:
       - storybook
     environment:
       - CYPRESS_baseUrl=http://storybook
+      - CYPRESS_screenshotsFolder=/results/screenshots
+      - CYPRESS_videosFolder=/results/videos
+    volumes: 
+      - type: bind
+        source: ./cypress/screenshots
+        target: /results/screenshots
+      - type: bind
+        source: ./cypress/videos
+        target: /results/videos
