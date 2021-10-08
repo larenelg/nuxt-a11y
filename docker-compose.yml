@@ -12,7 +12,6 @@ services:
       - storybook
     environment:
       - CYPRESS_baseUrl=http://storybook
-      - CYPRESS_browser=chrome
       - CYPRESS_screenshotsFolder=/results/screenshots
       - CYPRESS_videosFolder=/results/videos
     volumes: 
