@@ -5,7 +5,7 @@ export default {
   component: MyHeader,
 };
 
-const Template = ({ argTypes }) => ({
+const Template = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { MyHeader },
   template:

@@ -6,7 +6,7 @@ export default {
   component: MyPage,
 };
 
-const Template = ({ argTypes }) => ({
+const Template = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { MyPage },
   template:
