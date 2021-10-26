@@ -2,7 +2,6 @@
   <layout>
     <main id="main" role="main" tabindex="-1" aria-labelledby="heading">
       <h2 id="heading">{{ title }}</h2>
-      <button @click="onClick">Show toast</button>
     </main>
   </layout>
 </template>
@@ -16,18 +15,13 @@ export default {
   },
   data() {
     return {
-      title: 'Home',
+      title: 'Contact',
     }
   },
   head() {
     return {
       title: this.title,
     }
-  },
-  methods: {
-    onClick() {
-      this.$toasted.show('hello billo')
-    },
   },
 }
 </script>

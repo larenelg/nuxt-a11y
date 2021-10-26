@@ -1,0 +1,29 @@
+@tailwind base;
+
+@layer base {
+  h1 {
+    @apply text-2xl;
+  }
+  h2 {
+    @apply text-xl;
+  }
+  h3 {
+    @apply text-lg;
+  }
+  a {
+    @apply text-white underline;
+  }
+  button {
+    @apply bg-blue-500 p-2 rounded text-white;
+  }
+  button:hover {
+    @apply bg-blue-700;
+  }
+  button:focus {
+    @apply ring;
+  }
+}
+
+@tailwind components;
+
+@tailwind utilities;
