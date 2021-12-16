@@ -47,13 +47,13 @@ jobs:
       - name: Run e2e 🖥
         run: docker-compose up --exit-code-from cypress
 
-      - uses: actions/upload-artifact@v1
+      - uses: actions/upload-artifact@v2.3.1
         if: failure()
         with:
           name: cypress-screenshots
           path: cypress/screenshots
       # Test run video was always captured, so this action uses "always()" condition
-      - uses: actions/upload-artifact@v1
+      - uses: actions/upload-artifact@v2.3.1
         if: always()
         with:
           name: cypress-videos
