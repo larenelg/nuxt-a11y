@@ -14,19 +14,19 @@ export default {
   components: {
     Layout,
   },
-  data() {
+  data () {
     return {
       title: 'Home',
     }
   },
-  head() {
+  head () {
     return {
       title: this.title,
     }
   },
   methods: {
-    onClick() {
-      this.$toasted.show('hello billo')
+    onClick () {
+      this.$toasted.show('G\'day!', { duration: 3000 })
     },
   },
 }
