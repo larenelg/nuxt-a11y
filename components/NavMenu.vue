@@ -1,259 +1,645 @@
 <template>
-  <nav
-    id="site-navigation"
-    class="site-navigation"
-    aria-label="Clickable Menu Demonstration"
-  >
-    <!-- for use with <use> -->
-    <svg xmlns="http://www.w3.org/2000/svg" hidden>
-      <symbol id="arrow" viewbox="0 0 16 16">
-        <polyline
-          points="4 6, 8 10, 12 6"
-          stroke="#000"
-          stroke-width="2"
-          fill="transparent"
-          stroke-linecap="round"
-        />
-      </symbol>
-    </svg>
+  <div>
+    <div class="hamburger-nav">
+      <div class="hamburger-wrapper">
+        <div class="bar bar1"></div>
+        <div class="bar bar2"></div>
+        <div class="bar bar3"></div>
+      </div>
+    </div>
+    <div id="site-nav-mobile" class="showing">
+      <div class="top-nav-wrap">
+        <div class="location-select">
+          <div class="ls-inner">
+            <div class="location-option">
+              <a>
+                <div class="location-button">
+                  <img
+                    src="https://catalyst.concentrix.com/wp-content/uploads/2018/07/global.png"
+                    class="lazyloaded"
+                    data-ll-status="loaded"
+                  /><noscript
+                    ><img
+                      src="https://catalyst.concentrix.com/wp-content/uploads/2018/07/global.png"
+                  /></noscript>
+                  <i class="fa fa-caret-right"></i>
+                </div>
+              </a>
+            </div>
+            <div class="location-option">
+              <a href="https://ar.catalyst.concentrix.com/">
+                <div class="location-button">
+                  <img
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E"
+                    data-lazy-src="https://catalyst.concentrix.com/wp-content/uploads/2018/07/argentina.png"
+                  /><noscript
+                    ><img
+                      src="https://catalyst.concentrix.com/wp-content/uploads/2018/07/argentina.png" /></noscript
+                  ><i class="fa fa-caret-right"></i>
+                </div>
+              </a>
+            </div>
+            <div class="location-option">
+              <a href="https://catalyst.concentrix.com/jp/">
+                <div class="location-button">
+                  <img
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E"
+                    data-lazy-src="https://catalyst.concentrix.com/wp-content/uploads/2022/01/japan-1.png"
+                  /><noscript
+                    ><img
+                      src="https://catalyst.concentrix.com/wp-content/uploads/2022/01/japan-1.png" /></noscript
+                  ><i class="fa fa-caret-right"></i>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
 
-    <ul class="main-menu clicky-menu no-js">
-      <li>
-        <a href="#">Home</a>
-      </li>
-      <li>
-        <a href="#">
-          Services
-          <svg aria-hidden="true" width="16" height="16">
-            <use xlink:href="#arrow" />
-          </svg>
-        </a>
-        <ul>
-          <li><a href="#">Design</a></li>
-          <li><a href="#">Development</a></li>
-          <li><a href="#">Accessibility</a></li>
-          <li><a href="#">Content Strategy</a></li>
-          <li><a href="#">Training</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#">
-          Portfolio
-          <svg aria-hidden="true" width="16" height="16">
-            <use xlink:href="#arrow" />
-          </svg>
-        </a>
-        <ul>
-          <li><a href="#">Nonprofits</a></li>
-          <li><a href="#">Higher Education</a></li>
-          <li><a href="#">Associations</a></li>
-          <li><a href="#">Consultants</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#">
-          About
-          <svg aria-hidden="true" width="16" height="16">
-            <use xlink:href="#arrow" />
-          </svg>
-        </a>
-        <ul>
-          <li><a href="#">Mission</a></li>
-          <li><a href="#">History</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </li>
-    </ul>
-  </nav>
+        <div class="search-form top-nav">
+          <a class="search-icon toggle-search"
+            ><i class="fa fa-search"></i> SEARCH</a
+          >
+          <div class="show-search">
+            <form
+              role="search"
+              method="get"
+              class="searchform"
+              action="https://catalyst.concentrix.com/"
+              __bizdiag="115"
+              __biza="WJ__"
+            >
+              <label for="s" class="screen-reader-text"> Search </label>
+              <input
+                type="text"
+                value=""
+                name="s"
+                id="s"
+                placeholder="SEARCH"
+              />
+              <button type="submit" id="searchsubmit">
+                <i class="fa fa-caret-right"></i>
+                <span class="screen-reader-text"> Submit </span>
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="upper-nav-links top-nav">
+          <a href="/careers">Careers</a>
+          <a href="/contact">Contact</a>
+        </div>
+      </div>
+      <ul class="mobile-nav-links">
+        <li class="has-mobile-subnav">
+          <a href="">Capabilities</a>
+          <!-- OPTIONAL SUBNAV -->
+
+          <div class="mobile-sublinks">
+            <div class="mobile-sublinks-inner">
+              <div class="sub-nav-group">
+                <ul class="sub-nav-group-links">
+                  <li>
+                    <a href="/strategy-and-design">Strategy &amp; Design</a>
+                  </li>
+                  <li>
+                    <a href="/experience-platforms">eXperience Platforms</a>
+                  </li>
+                  <li>
+                    <a href="/digital-engineering">Digital Engineering</a>
+                  </li>
+                  <li>
+                    <a href="/cloud-engineering">Cloud Engineering</a>
+                  </li>
+                  <li>
+                    <a href="/data-and-analytics">Data &amp; Analytics</a>
+                  </li>
+                  <li>
+                    <a href="/automation-and-operations"
+                      >Automation &amp; Operations</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="has-mobile-subnav">
+          <a href="">Solutions</a>
+          <!-- OPTIONAL SUBNAV -->
+
+          <div class="mobile-sublinks">
+            <div class="mobile-sublinks-inner">
+              <div class="sub-nav-group">
+                <ul class="sub-nav-group-links">
+                  <li>
+                    <a href="/loyalty-connected-membership"
+                      >Loyalty &amp; Connected Membership</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/CX-transformation">CX Transformation</a>
+                  </li>
+                  <li>
+                    <a href="/enterprise-modernization"
+                      >Enterprise Modernization</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/API-management-security"
+                      >API Management &amp; Security</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/digital-selling">Digital Selling</a>
+                  </li>
+                  <li>
+                    <a href="/intelligent-automation">Intelligent Automation</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="has-mobile-subnav">
+          <a href="">Outcomes</a>
+          <!-- OPTIONAL SUBNAV -->
+
+          <div class="mobile-sublinks">
+            <div class="mobile-sublinks-inner">
+              <div class="sub-nav-group">
+                <ul class="sub-nav-group-links">
+                  <li>
+                    <a href="/customer-acquisition">Customer Acquisition</a>
+                  </li>
+                  <li>
+                    <a href="/customer-engagement">Customer Engagement</a>
+                  </li>
+                  <li>
+                    <a href="/customer-retention">Customer Retention</a>
+                  </li>
+                  <li>
+                    <a href="/speed-to-market">Speed to Market</a>
+                  </li>
+                  <li>
+                    <a href="/business-optimization">Business Optimization</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="has-mobile-subnav">
+          <a href="#">Industries</a>
+          <!-- OPTIONAL SUBNAV -->
+
+          <div class="mobile-sublinks">
+            <div class="mobile-sublinks-inner">
+              <div class="sub-nav-group">
+                <ul class="sub-nav-group-links">
+                  <li>
+                    <a href="/banking-financial-services-and-insurance"
+                      >Banking, Financial Services, &amp; Insurance</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/healthcare">Healthcare &amp; Life Sciences</a>
+                  </li>
+                  <li>
+                    <a href="/retail-and-consumer">Retail &amp; Consumer</a>
+                  </li>
+                  <li>
+                    <a href="/technology-and-software"
+                      >Technology &amp; Software</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/telecom">Telecom &amp; Media</a>
+                  </li>
+                  <li>
+                    <a href="/transportation-and-logistics"
+                      >Transportation &amp; Logistics</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="has-mobile-subnav">
+          <a href="#">Company</a>
+          <!-- OPTIONAL SUBNAV -->
+
+          <div class="mobile-sublinks">
+            <div class="mobile-sublinks-inner">
+              <div class="sub-nav-group">
+                <ul class="sub-nav-group-links">
+                  <li>
+                    <a href="/about-us">About Us</a>
+                  </li>
+                  <li>
+                    <a href="/careers">Careers</a>
+                  </li>
+                  <li>
+                    <a href="/news-and-in-the-press/"
+                      >News &amp; In the Press</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="has-mobile-subnav">
+          <a href="">Engage</a>
+          <!-- OPTIONAL SUBNAV -->
+
+          <div class="mobile-sublinks">
+            <div class="mobile-sublinks-inner">
+              <div class="sub-nav-group">
+                <ul class="sub-nav-group-links">
+                  <li>
+                    <a href="/insights/">Insights</a>
+                  </li>
+                  <li>
+                    <a href="/Resources">Resources</a>
+                  </li>
+                  <li>
+                    <a href="/Work">Work</a>
+                  </li>
+                  <li>
+                    <a href="/events/list">Events</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <a href="/partnerships">Partnerships</a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </template>
 
-<style scoped>
-/**
- * Initial state, hidden off screen
- */
-.clicky-menu ul {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  visibility: hidden; /*[1]*/
-}
+<script>
+export default {
+  methods: {
+    toggleNav () {
 
-/**
- * No JS fallback
- *
- * Triggers menus on hover rather than click. Supports keyboard navigation in modern browsers.
- */
-.clicky-menu.no-js li:hover > ul {
-  visibility: visible;
-}
-.clicky-menu.no-js li:focus-within > ul {
-  /*[2]*/
-  visibility: visible;
-}
-
-/**
- * Open/Close Menu Behavior with JS
- */
-.clicky-menu ul[aria-hidden='false'] {
-  visibility: visible;
-}
-
-/* Prevent offscreen-submenus */
-.clicky-menu .sub-menu--right {
-  left: auto !important;
-  right: 0 !important;
-}
-
-/**
- * Footnotes
- *
- * [1] Using `visibility` instead of `display` allows for easier transitions and animation of submenus
- * [2] Must be a separate ruleset so that hover works in non-modern browsers
- */
-
-/* Hidden SVG used for down arrows */
-svg[hidden] {
-  display: none;
-  position: absolute;
-}
-
-.site-navigation {
-  width: 86%;
-  max-width: 782px;
-  margin: 100px auto 300px;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  background-color: #eee;
-  border-radius: 4px;
-}
-
-.clicky-menu {
-  justify-content: stretch;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-@media (min-width: 540px) {
-  .clicky-menu {
-    display: flex;
-  }
-}
-
-/* General Link & Button Styles */
-.clicky-menu a,
-.clicky-menu button {
-  margin: 0.25em;
-  padding: 1em;
-  background: transparent;
-  color: #000;
-  font-weight: bold;
-  text-decoration: none;
-  font-family: -apple-system, 'system-ui', 'Segoe UI', Roboto, Oxygen-Sans,
-    Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-  border-radius: 3px;
-}
-
-.clicky-menu a:hover,
-.clicky-menu button:hover {
-  background: #fff;
-}
-
-.clicky-menu a:focus,
-.clicky-menu button:focus {
-  outline: 0.125em dotted purple;
-  outline-offset: -0.125em;
-}
-
-/* Top Level Items */
-.clicky-menu > li {
-  position: relative;
-  flex: 1 1 auto;
-  display: flex;
-  justify-content: stretch;
-  flex-wrap: wrap;
-}
-
-.clicky-menu > li > a,
-.clicky-menu > li > button {
-  flex: 1 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  border: 0;
-  font-size: inherit;
-  line-height: 1.5;
-  cursor: pointer;
-}
-@media (min-width: 540px) {
-  .clicky-menu > li > a,
-  .clicky-menu > li > button {
-    justify-content: center;
-  }
-}
-
-/* Icon */
-.clicky-menu svg {
-  width: 1em;
-  height: 1em;
-  margin-left: 0.5em;
-}
-
-.clicky-menu [aria-expanded='true'] svg {
-  transform: scaleY(-1);
-}
-
-/* Submenu Styles */
-.clicky-menu ul {
-  min-width: 100%;
-  width: 12em;
-  margin-top: 0.25em;
-  padding: 0;
-  list-style: none;
-  background-color: #eee;
-  border-radius: 3px;
-}
-@media (min-width: 540px) {
-  .clicky-menu {
-    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.2);
-  }
-}
-
-/* Responsive Submenu Behavior */
-.clicky-menu ul[aria-hidden='false'] {
-  position: static;
-  width: 100%;
-  flex: 0 0 auto;
-}
-
-@media (min-width: 540px) {
-  .clicky-menu ul[aria-hidden='false'] {
-    position: absolute;
-    width: auto;
-  }
-}
-
-/* Submenu Links */
-.clicky-menu ul a {
-  display: block;
-  padding-top: 0.375em;
-  padding-bottom: 0.375em;
-}
-@media (min-width: 540px) {
-  .clicky-menu ul a {
-    padding: 0.375em 1em;
-    white-space: nowrap;
-  }
-}
-
-.github {
-  text-align: center;
-  a {
-    color: #fff;
-    opacity: 0.6;
-
-    &:hover,
-    &:focus {
-      opacity: 1;
     }
   }
+}
+</script>
+
+
+<style>
+.hamburger-nav {
+  display: block;
+}
+
+.hamburger-nav {
+  cursor: pointer;
+  margin-left: auto;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  z-index: 99999999;
+}
+
+.hamburger-nav:hover .hamburger-wrapper .bar {
+  background-color: #a5b2b6;
+}
+
+.hamburger-nav .hamburger-wrapper {
+  display: block;
+  height: 30px;
+  -webkit-transform: scale(0.7);
+  transform: scale(0.7);
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  width: 40px;
+}
+
+.hamburger-nav .hamburger-wrapper .bar {
+  background-color: #036;
+  display: block;
+  height: 2px;
+  margin-bottom: 10px;
+  opacity: 1;
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  width: 40px;
+}
+
+.hamburger-nav.showing {
+  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
+}
+
+.hamburger-nav.showing .hamburger-wrapper {
+  -webkit-transform: scale(0.7) translateY(10px);
+  transform: scale(0.7) translateY(10px);
+}
+
+.hamburger-nav.showing .hamburger-wrapper .bar1 {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.hamburger-nav.showing .hamburger-wrapper .bar2 {
+  -webkit-transform: rotate(-45deg) translateX(8px) translateY(-9px);
+  transform: rotate(-45deg) translateX(8px) translateY(-9px);
+}
+
+.hamburger-nav.showing .hamburger-wrapper .bar3 {
+  opacity: 0;
+  -webkit-transform: rotate(-45deg) translateX(1pc) translateY(-20px);
+  transform: rotate(-45deg) translateX(1pc) translateY(-20px);
+}
+
+#site-nav-mobile {
+  background-color: #fff;
+  display: none;
+  height: 100vh;
+  max-width: 500px;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
+  padding-top: 50px;
+  position: fixed;
+  right: -550px;
+  top: 0;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  width: 100%;
+  z-index: 9999999;
+}
+
+#site-nav-mobile {
+  display: block;
+}
+
+#site-nav-mobile.showing {
+  right: 0;
+}
+
+#site-nav-mobile .top-nav-wrap {
+  border-bottom: 1px solid #d9dee2;
+  display: none;
+  padding: 1rem;
+}
+
+#site-nav-mobile .top-nav-wrap {
+  display: block;
+}
+
+#site-nav-mobile .top-nav-wrap .location-select {
+  display: block;
+  height: 25px;
+  left: 2rem;
+  margin-bottom: 1rem;
+  overflow-y: hidden;
+  position: absolute;
+  top: 1.5rem;
+  width: 45px;
+}
+
+#site-nav-mobile .top-nav-wrap .location-select .ls-inner {
+  left: 0;
+  position: relative;
+  top: 0;
+}
+
+#site-nav-mobile .top-nav-wrap .location-select.open,
+#site-nav-mobile .top-nav-wrap .location-select:hover {
+  overflow-y: visible;
+}
+
+#site-nav-mobile .top-nav-wrap .location-select .location-option {
+  background-color: #e1e6e8;
+  border: 2px solid #d9dee2;
+  border-radius: 2px;
+  display: block;
+  height: 25px;
+  width: 45px;
+}
+
+#site-nav-mobile .top-nav-wrap .location-select .location-option a {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+}
+
+#site-nav-mobile
+  .top-nav-wrap
+  .location-select
+  .location-option
+  .location-button {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#site-nav-mobile
+  .top-nav-wrap
+  .location-select
+  .location-option
+  .location-button
+  i {
+  color: #a2afb8;
+}
+
+#site-nav-mobile .top-nav-wrap .location-select .location-option img {
+  display: inline-block;
+  height: auto;
+  max-height: 20px;
+  max-width: 100%;
+  width: auto;
+}
+
+#site-nav-mobile .top-nav-wrap .upper-nav-links {
+  display: block;
+  margin-top: 1rem;
+  text-align: left;
+  width: 100%;
+}
+
+#site-nav-mobile .top-nav-wrap .show-search {
+  display: block;
+  height: 0;
+  overflow: hidden;
+  padding-left: 1rem;
+}
+
+#site-nav-mobile .top-nav-wrap .show-search.showing {
+  height: auto;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+#site-nav-mobile .top-nav-wrap .searchform {
+  position: relative;
+  width: 100%;
+}
+
+#site-nav-mobile .top-nav-wrap .search-form {
+  display: block;
+  text-align: left;
+  width: 100%;
+}
+
+#site-nav-mobile .top-nav-wrap .search-form input[type='text'] {
+  border-color: #d6dce5;
+  border-style: solid;
+  border-width: 2px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  font-size: 1rem;
+  padding: 1rem;
+  width: 100%;
+}
+
+#site-nav-mobile .top-nav-wrap .search-form button[type='submit'] {
+  background-color: #fff;
+  border-color: #d6dce5;
+  border-style: solid;
+  border-width: 2px;
+  color: #036;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 700;
+  height: 100%;
+  letter-spacing: 1px;
+  margin-bottom: 0;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 39px;
+}
+
+#site-nav-mobile ul.mobile-nav-links {
+  margin-left: 0;
+  padding: 2rem 0;
+}
+
+#site-nav-mobile ul.mobile-nav-links li {
+  border-bottom: 1px solid #d9dee2;
+  height: 50px;
+  line-height: 50px;
+  list-style-type: none;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+#site-nav-mobile ul.mobile-nav-links li a {
+  color: #000;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+#site-nav-mobile ul.mobile-nav-links li.has-mobile-subnav {
+  line-height: 50px;
+  max-height: 50px;
+  overflow-y: hidden;
+  position: relative;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+
+#site-nav-mobile ul.mobile-nav-links li.has-mobile-subnav:after {
+  color: #036;
+  content: '\f107';
+  display: block;
+  font-family: FontAwesome, sans-serif;
+  font-size: 1.25rem;
+  position: absolute;
+  right: 20px;
+  top: 0;
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+#site-nav-mobile ul.mobile-nav-links li.has-mobile-subnav.showing {
+  height: auto;
+  max-height: 3000px;
+}
+
+#site-nav-mobile ul.mobile-nav-links li.has-mobile-subnav.showing:after {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+#site-nav-mobile
+  ul.mobile-nav-links
+  li.has-mobile-subnav
+  .mobile-sublinks
+  .mobile-sublinks-inner {
+  background-color: #f3f4f6;
+  -webkit-box-shadow: -200px 0 0 0 #f3f4f6, 200px 0 0 0 #f3f4f6;
+  box-shadow: -200px 0 0 0 #f3f4f6, 200px 0 0 0 #f3f4f6;
+  padding: 1rem 0;
+}
+
+#site-nav-mobile
+  ul.mobile-nav-links
+  li.has-mobile-subnav
+  .mobile-sublinks
+  .mobile-sublinks-inner
+  .sub-nav-group
+  .sub-nav-group-label {
+  color: #a5b2b6;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-top: 1rem;
+}
+
+#site-nav-mobile
+  ul.mobile-nav-links
+  li.has-mobile-subnav
+  .mobile-sublinks
+  .mobile-sublinks-inner
+  .sub-nav-group
+  .sub-nav-group-links {
+  margin-left: 0;
+}
+
+#site-nav-mobile
+  ul.mobile-nav-links
+  li.has-mobile-subnav
+  .mobile-sublinks
+  .mobile-sublinks-inner
+  .sub-nav-group
+  .sub-nav-group-links
+  li {
+  border-bottom: none;
+  height: auto;
+  line-height: 1.5;
+}
+
+#site-nav-mobile
+  ul.mobile-nav-links
+  li.has-mobile-subnav
+  .mobile-sublinks
+  .mobile-sublinks-inner
+  .sub-nav-group
+  .sub-nav-group-links
+  li
+  a {
+  display: block;
+  padding: 0.9375rem 0;
+  size: 1.125rem;
+  text-transform: none;
 }
 </style>
