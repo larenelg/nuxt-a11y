@@ -1,13 +1,24 @@
 <template>
   <div>
     <div class="hamburger-nav">
-      <div class="hamburger-wrapper">
+      <div
+        role="button"
+        tabindex="0"
+        aria-label="Menu"
+        :aria-expanded="{ true: isOpen }"
+        aria-haspopup="true"
+        aria-controls="site-nav-mobile"
+        class="hamburger-wrapper"
+        @click="toggleMenu()"
+        @keydown="(e) => handleKeyDown(e)"
+      >
         <div class="bar bar1"></div>
         <div class="bar bar2"></div>
         <div class="bar bar3"></div>
+        <span class="sr-only"> Menu</span>
       </div>
     </div>
-    <div id="site-nav-mobile" class="showing">
+    <div id="site-nav-mobile" role="menu" :class="{ showing: isOpen }">
       <div class="top-nav-wrap">
         <div class="location-select">
           <div class="ls-inner">
@@ -282,17 +293,40 @@
 </template>
 
 <script>
+// https://www.w3.org/TR/wai-aria-practices-1.1/#menubutton
 export default {
-  methods: {
-    toggleNav () {
-
+  data () {
+    return {
+      isOpen: true,
     }
+  },
+  methods: {
+    toggleMenu () {
+      this.isOpen = !this.isOpen;
+    },
+    handleKeyDown (event) {
+      if (event.code === "Space" || event.code === "Enter") {
+        this.toggleMenu()
+      }
+    }
+    // also need to handle escape while inside the menu!
   }
 }
 </script>
 
 
 <style>
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
 .hamburger-nav {
   display: block;
 }
@@ -381,6 +415,8 @@ export default {
 
 #site-nav-mobile {
   display: block;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 #site-nav-mobile.showing {
