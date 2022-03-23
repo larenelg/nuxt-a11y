@@ -1,16 +1,23 @@
 <template>
   <div>
-    <div id="mySidenav" class="sidenav">
-      <button ref="firstElement" class="closebtn" @click="closeNav">
+    <nav id="mySidenav" class="sidenav" aria-label="primary">
+      <button
+        ref="firstElement"
+        class="closebtn"
+        aria-label="close navigation"
+        @click="closeNav"
+      >
         &times;
       </button>
       <a href="#">About</a>
       <a href="#">Services</a>
       <a href="#">Clients</a>
       <a href="#">Contact</a>
-    </div>
+    </nav>
 
-    <button ref="menuButton" @click="openNav">☰</button>
+    <button ref="menuButton" aria-label="menu button" @click="openNav">
+      ☰
+    </button>
   </div>
 </template>
 
@@ -24,12 +31,16 @@ export default Vue.extend({
   methods: {
     /* Set the width of the side navigation to 250px */
     openNav () {
+      document.getElementById("mySidenav").style.visibility = "visible";
       document.getElementById("mySidenav").style.width = "250px";
-      this.$refs.firstElement.focus();
+      this.$nextTick(() => {
+        this.$refs.firstElement.focus();
+      })
     },
     /* Set the width of the side navigation to 0 */
     closeNav () {
       document.getElementById("mySidenav").style.width = "0";
+      document.getElementById("mySidenav").style.visibility = "hidden";
       this.$refs.menuButton.focus();
     }
   }
@@ -63,6 +74,7 @@ button:focus {
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 60px; /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  visibility: hidden;
 }
 
 /* The navigation menu links */
