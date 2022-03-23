@@ -3,6 +3,7 @@
     <nav id="mySidenav" class="sidenav" aria-label="primary">
       <button
         ref="firstElement"
+        id="mySidenavClose"
         class="closebtn"
         aria-label="close navigation"
         @click="closeNav"
@@ -15,7 +16,13 @@
       <a href="#">Contact</a>
     </nav>
 
-    <button ref="menuButton" aria-label="menu button" @click="openNav">
+    <button
+      ref="menuButton"
+      aria-label="menu button"
+      @click="openNav"
+      :aria-expanded="isOpen ? 'true' : 'false'"
+      aria-controls="mySidenav"
+    >
       ☰
     </button>
   </div>
@@ -28,20 +35,31 @@ import Vue from 'vue';
 // to accessible https://pauljadam.com/demos/hamburger-menu.html
 
 export default Vue.extend({
+  data () {
+    return {
+      isOpen: false,
+    }
+  },
   methods: {
     /* Set the width of the side navigation to 250px */
     openNav () {
       document.getElementById("mySidenav").style.visibility = "visible";
       document.getElementById("mySidenav").style.width = "250px";
-      this.$nextTick(() => {
+      setTimeout(() => {
         this.$refs.firstElement.focus();
-      })
+      }, 200)
+
+      this.isOpen = true;
     },
     /* Set the width of the side navigation to 0 */
     closeNav () {
       document.getElementById("mySidenav").style.width = "0";
       document.getElementById("mySidenav").style.visibility = "hidden";
-      this.$refs.menuButton.focus();
+      setTimeout(() => {
+        this.$refs.menuButton.focus();
+      }, 200)
+
+      this.isOpen = false;
     }
   }
 })
