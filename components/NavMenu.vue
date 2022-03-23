@@ -1,21 +1,22 @@
 <template>
   <div>
     <div id="mySidenav" class="sidenav">
-      <a href="javascript:void(0)" class="closebtn" @click="closeNav"
-        >&times;</a
-      >
+      <button class="closebtn" @click="closeNav">&times;</button>
       <a href="#">About</a>
       <a href="#">Services</a>
       <a href="#">Clients</a>
       <a href="#">Contact</a>
     </div>
 
-    <span @click="openNav">Menu</span>
+    <button @click="openNav">☰</button>
   </div>
 </template>
 
 <script>
 import Vue from 'vue';
+
+// from Inaccessible https://www.w3schools.com/howto/howto_js_sidenav.asp
+// to accessible https://pauljadam.com/demos/hamburger-menu.html
 
 export default Vue.extend({
   methods: {
@@ -32,6 +33,15 @@ export default Vue.extend({
 </script>
 
 <style scoped>
+button {
+  background: black;
+  height: 48px;
+  width: 48px;
+  color: white;
+  border: unset;
+  font-size: 2em;
+}
+
 /* The side navigation menu */
 .sidenav {
   height: 100%; /* 100% Full-height */
