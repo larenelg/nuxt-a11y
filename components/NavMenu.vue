@@ -1,14 +1,16 @@
 <template>
   <div>
     <div id="mySidenav" class="sidenav">
-      <button class="closebtn" @click="closeNav">&times;</button>
+      <button ref="firstElement" class="closebtn" @click="closeNav">
+        &times;
+      </button>
       <a href="#">About</a>
       <a href="#">Services</a>
       <a href="#">Clients</a>
       <a href="#">Contact</a>
     </div>
 
-    <button @click="openNav">☰</button>
+    <button ref="menuButton" @click="openNav">☰</button>
   </div>
 </template>
 
@@ -23,10 +25,12 @@ export default Vue.extend({
     /* Set the width of the side navigation to 250px */
     openNav () {
       document.getElementById("mySidenav").style.width = "250px";
+      this.$refs.firstElement.focus();
     },
     /* Set the width of the side navigation to 0 */
     closeNav () {
       document.getElementById("mySidenav").style.width = "0";
+      this.$refs.menuButton.focus();
     }
   }
 })
@@ -40,6 +44,11 @@ button {
   color: white;
   border: unset;
   font-size: 2em;
+}
+
+button:focus {
+  outline: 3px solid orangered;
+  outline-offset: 1px;
 }
 
 /* The side navigation menu */
